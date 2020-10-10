@@ -1,39 +1,28 @@
-/* tabs menu */
-;(function() {
+(function($) {
 	'use strict';
 
-	var tabsmenu = document.querySelectorAll('.tabsmenu');
-	if (!tabsmenu) return;
+	$(function() {
+		let menu_tab = $('.tabsmenu li'); 
+		if (!menu_tab.length)
+			return
 
-	[].forEach.call(tabsmenu, function(menu) {
-		menu.addEventListener('click', function(e) {
-			if (e.target.tagName != 'LI') return;
-			var currIndex = switchTab(menu, e.target);
-			switchBlock(menu, currIndex);
+		menu_tab.on('click', function() {
+			$(this).siblings().removeClass('active')
+			$(this).addClass('active')
+			SwitchTab($(this).index())
 		})
-	});
+	})
 
-	function switchTab(menu, tab) {
-		var items = menu.querySelectorAll('li'),
-			currIndex;
+	let SwitchTab = (index) => {
+		let container_tab = $('.tabsmenu-wrapper .container')
 
-		[].forEach.call(items, function(item, index) {
-			item.classList.remove('active');
-			if (item === tab) {
-				item.classList.add('active');
-				currIndex = index;
-			}
-		});
-		return currIndex;
+		if (!container_tab.eq(index).length)
+			return
+			
+		$('.tabsmenu-wrapper').find('.active-container').fadeOut(500, () => {
+			container_tab.removeClass('active-container')
+			container_tab.eq(index).addClass('active-container')
+			container_tab.eq(index).css('display','flex').hide().fadeIn(500)
+		})
 	}
-
-	function switchBlock(menu, currIndex) {
-		var content	= menu.nextElementSibling,
-			blocks = content.querySelectorAll('.container > div');
-
-		[].forEach.call(blocks, function(block, index) {
-			block.removeAttribute('style');
-			if (index == currIndex) block.style.display = 'flex';
-		});
-	}
-})();
+})(jQuery)
