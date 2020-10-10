@@ -1,0 +1,91 @@
+html, body, div, span, h1, h2, h3, p, ul, li {margin: 0; padding: 0; border: 0; vertical-align: baseline;}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li { 
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: black;
+}
+.container {
+    display: none;
+}
+.active-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.active {
+    color: #BCA56A;
+    display: block;
+    border-bottom: 2px solid;
+}
+.active-tab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 360px;
+    height: 232px;
+    margin-right: 40px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.active-tab:before {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 400px;
+    top: 30%;
+    left: -55%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.56);
+}
+.tabsmenu-wrapper {
+    width: 1140px;
+    margin: 0 auto;
+}
+.tabsmenu {
+    display: flex;
+    flex-direction: row;
+}
+.outline {
+    border-bottom: 1px solid #3D3C3C;
+    opacity: 0.08;
+}
+.tab {
+    margin: 2px 12px 0px 24px;
+}
+.tab:first-child {
+    margin-left: 0;
+}
+.tab-container {
+    position: absolute;
+    top: 111px;
+    left: 24px;
+}
+.tab-title {
+    font-family: Euclid Circular A;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.32);
+}
+.tab-description {
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.32);
+}
