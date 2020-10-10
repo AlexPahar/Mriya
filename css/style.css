@@ -4,6 +4,7 @@ ul, li {
     margin: 0;
     padding: 0;
 }
+/*Tabs*/
 li { 
     font-family: Euclid Circular B;
     font-style: normal;
@@ -88,4 +89,68 @@ li {
     line-height: 32px;
     color: #FFFFFF;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.32);
+}
+/*About us*/
+.aboutUs-wrapper {
+    width: 1140px;
+    position: relative;
+    margin: 0 auto;
+}
+.aboutUs-wrapper:before {
+    position: absolute;
+    content: "";
+    width: 146px;
+    height: 8px;
+    background: url(../images/waves.png)no-repeat;
+    left: 44%;
+    top: -70px;
+}
+.aboutUs-wrapper:after {
+    position: absolute;
+    content: "";
+    width: 62px;
+    height: 40px;
+    background: url(../images/Vector.png)no-repeat;
+    left: 47%;
+    top: 150px;
+}
+.aboutUs-title {
+    font-family: SangBleu Kingdom;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 56px;
+    text-align: center;
+    color: #3D3C3C;
+    margin-bottom: 124px;
+    margin-top: 144px;
+}
+.aboutUs-description {
+    font-family: SangBleu Kingdom;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #333333;
+}
+.aboutUs {
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3D3C3C;
+    text-decoration: none;
+    border: 1px solid #D9C287;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 10px 42px;
+    max-width: 200px;
+    margin: 38px auto 0 auto;
 }
