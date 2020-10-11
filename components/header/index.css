@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.burger-button {
+  position: relative;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background: #3D3C3C;
+}
+
+.burger-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  height: 32px;
+  display: block;
+  background: url("/images/open.png") 50% 50% no-repeat;
+}
+/*# sourceMappingURL=index.css.map */
