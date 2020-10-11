@@ -19,7 +19,7 @@ li {
     display: none;
 }
 .active-container {
-    display: none;
+    display: flex;
     flex-direction: row;
     margin-top: 30px;
 }
@@ -153,4 +153,21 @@ li {
     padding: 10px 42px;
     max-width: 200px;
     margin: 38px auto 0 auto;
+}
+.footer {
+    width: 100%;
+    background: url(../images/Mriya.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 103px;
+}
+.tablet-wrapper {
+    margin: 100px auto 0 auto;
+    width: 1140px;
+    display: flex;
+    justify-content: center;
+}
+.logo-footer {
+    display: flex;
+    justify-content: center;
 }
