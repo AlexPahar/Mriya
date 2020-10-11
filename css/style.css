@@ -19,7 +19,7 @@ li {
     display: none;
 }
 .active-container {
-    display: none;
+    display: flex;
     flex-direction: row;
     margin-top: 30px;
 }
@@ -102,7 +102,7 @@ li {
     width: 146px;
     height: 8px;
     background: url(../images/waves.png)no-repeat;
-    left: 44%;
+    left: 43%;
     top: -70px;
 }
 .aboutUs-wrapper:after {
@@ -132,6 +132,8 @@ li {
     font-size: 18px;
     line-height: 32px;
     text-align: center;
+    max-width: 500px;
+    margin: auto;
     color: #333333;
 }
 .aboutUs {
@@ -153,4 +155,68 @@ li {
     padding: 10px 42px;
     max-width: 200px;
     margin: 38px auto 0 auto;
+}
+.footer {
+    width: 100%;
+    background: url(../images/Mriya.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 103px;
+}
+.tablet-wrapper {
+    margin: 100px auto 0 auto;
+    width: 1140px;
+    display: flex;
+    justify-content: center;
+}
+.logo-footer {
+    display: flex;
+    justify-content: center;
+}
+/*------Adaptation------*/
+@media (max-width: 320px) {
+    .active-container {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .tab {
+        white-space: nowrap;
+    }
+    .active-tab {
+        margin: 32px auto 0px auto;
+        width: 288px;
+    }
+    .active-tab:before {
+        left: -80%;
+    }
+    .aboutUs-wrapper:before {
+        left: 28%;
+        top: -50px;
+    }
+    .aboutUs-wrapper:after {
+        left: 42%;
+        top: 85px;
+    }
+    .aboutUs-wrapper {
+        width: auto;
+    }
+    .tablet {
+        display: none;
+    }
+    .tabsmenu-wrapper {
+        width: auto;
+    }
+    .tabsmenu {
+        overflow: auto;
+    }
+    .aboutUs-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 84px;
+        margin-top: 94px;
+    }
+    .aboutUs-description {
+        font-size: 18px;
+        line-height: 32px;
+    }
 }

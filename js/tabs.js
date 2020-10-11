@@ -23,6 +23,7 @@
 			container_tab.removeClass('active-container')
 			container_tab.eq(index).addClass('active-container')
 			container_tab.eq(index).css('display','flex').hide().fadeIn(500)
+			container_tab.eq(index).css('display','flex').stop()
 		})
 	}
 })(jQuery)
