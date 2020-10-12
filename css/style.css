@@ -362,3 +362,6 @@ li {
     }
 }
 
+.container-tabsmenu {
+    overflow: hidden;
+}
