@@ -4,6 +4,126 @@ ul, li {
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: "Euclid Circular B";
+    src: url("../fonts/EuclidCircularB-BoldItalic.ttf");
+    src: url("../fonts/EuclidCircularB-Italic.ttf");
+    src: url("../fonts/EuclidCircularB-Light.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "SangBleu Kingdom";
+    src: url("../fonts/SangBleuKingdom-AirItalic-WebXL.otf");
+    src: url("../fonts/SangBleuKingdom-Air-WebXL.otf");
+    src: url("../fonts/SangBleuKingdom-Bold-WebXL.otf");
+    src: url("../fonts/SangBleuKingdom-BoldItalic-WebXL.otf");
+    src: url("../fonts/SangBleuKingdom-Light-WebXL.otf");
+    src: url("../fonts/SangBleuKingdom-Medium-WebXL.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+/*Header*/
+header {
+    position: relative;
+}
+.bgwrap {
+    z-index: 0;
+}
+.headbg {
+    background: url(../images/flower.png) no-repeat;
+    position: absolute;
+    content: '';
+    width: 910px;
+    height: 936px;
+    right: 0;
+}
+.headbg-flower {
+    background: url(../images/flower_stroke.png) no-repeat;
+    position: absolute;
+    content: '';
+    width: 910px;
+    height: 936px;
+    right: 230px;
+}
+.header-wrapper {
+    width: 1160px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+.name {
+    font-family: SangBleu Kingdom;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 96px;
+    line-height: 96px;
+    display: flex;
+    align-items: center;
+    color: #3D3C3C;
+    margin-bottom: 40px;
+    margin-top: 79px;
+}
+.head-description {
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3D3C3C;
+}
+.bottom-description {
+    font-family: Euclid Circular B;
+    src: url(../fonts/EuclidCircularB-BoldItalic.eot);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    color: #3D3C3C;
+}
+.button-wrapper {
+    display: flex;
+    margin-top: 57px;
+}
+.left-button {
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: linear-gradient(0deg, #BCA56A, #BCA56A), #86C1DB;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 24px 43px;
+    margin-right: 40px;
+}
+.right-button {
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 24px 43px;
+    border: 1px solid #D9C287;
+    box-sizing: border-box;
+    width: 200px;
+}
 /*Tabs*/
 li { 
     font-family: Euclid Circular B;
@@ -50,8 +170,10 @@ li {
     background: rgba(0, 0, 0, 0.56);
 }
 .tabsmenu-wrapper {
-    width: 1140px;
+    width: 1160px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 .tabsmenu {
     display: flex;
@@ -92,7 +214,7 @@ li {
 }
 /*About us*/
 .aboutUs-wrapper {
-    width: 1140px;
+    width: 1160px;
     position: relative;
     margin: 0 auto;
 }
@@ -145,7 +267,7 @@ li {
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #3D3C3C;
     text-decoration: none;
@@ -165,7 +287,7 @@ li {
 }
 .tablet-wrapper {
     margin: 100px auto 0 auto;
-    width: 1140px;
+    width: 1160px;
     display: flex;
     justify-content: center;
 }
@@ -200,7 +322,7 @@ li {
     .aboutUs-wrapper {
         width: auto;
     }
-    .tablet {
+    .tablet-wrapper {
         display: none;
     }
     .tabsmenu-wrapper {
@@ -219,4 +341,16 @@ li {
         font-size: 18px;
         line-height: 32px;
     }
+    .footer {
+        background: url(../images/111.png) no-repeat;
+        margin-bottom: 0;
+        height: 558px;
+        position: relative;
+    }
+    .logo-footer {
+        bottom: 38%;
+        left: 42%;
+        position: absolute;
+    }
 }
+
