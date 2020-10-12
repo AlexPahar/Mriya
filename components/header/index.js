@@ -45,20 +45,31 @@
 
         burger_menu_item.each(function() {
             $(this).click(function(e) {
-                e.preventDefault()
+                if (window.matchMedia("(min-width: 961px)").matches) {
+                    e.preventDefault()
 
-                right_menu_container.children().remove()
-                Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'))
+                    right_menu_container.children().remove()
+                    Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'))
+    
+                    let submenu = $(this).parent().find('.menu-submenu').clone()
+                    right_menu_container.append(submenu)
+                    Scrollbar.init(document.querySelector('.burger-block__content_menu_right ul'))
+                } else {
+                    e.preventDefault()
 
-                let submenu = $(this).parent().find('.menu-submenu').clone()
-                right_menu_container.append(submenu)
-                Scrollbar.init(document.querySelector('.burger-block__content_menu_right ul'))
-                
+                    let submenu = $(this).parent().find('.menu-submenu');
+                    submenu.slideToggle(500);
+                }
             })
             // $(this).mouseleave(function() {
             //     right_menu_container.children().remove()
             //     Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'))
             // })
+        })
+
+        $('.burger-block__lang_item_active').on('click', function(e) {
+            e.preventDefault()
+            $(this).parent().toggleClass('opened')
         })
     })
 })(jQuery)
