@@ -137,6 +137,12 @@ li {
 }
 .container {
     display: none;
+    width: 100%;
+    overflow: auto;
+    padding: 0 140px 0 140px;
+}
+.scroll-content {
+    display: flex;
 }
 .active-container {
     display: flex;
@@ -158,6 +164,7 @@ li {
     margin-right: 40px;
     overflow: hidden;
     border-radius: 6px;
+    flex: 0 0 auto;
 }
 .active-tab:before {
     position: absolute;
@@ -170,7 +177,6 @@ li {
     background: rgba(0, 0, 0, 0.56);
 }
 .tabsmenu-wrapper {
-    width: 1160px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -178,6 +184,8 @@ li {
 .tabsmenu {
     display: flex;
     flex-direction: row;
+    width: 1140px;
+    margin: 0 auto;
 }
 .outline {
     border-bottom: 1px solid #3D3C3C;
