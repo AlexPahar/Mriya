@@ -31,7 +31,22 @@ ul, li {
     height: 80px;
     background: #3D3C3C;
   }
-  
+  .top-menu {
+    display: inline-flex;
+  }
+  .wrap-menu {
+    display: flex;
+    position: relative;
+    z-index: 3;
+  }
+  .menu-top {
+    padding: 28px;
+  }
+  .menu-button {
+    text-decoration: none;
+    font-weight: bold;
+    color: #3d3c3c;
+  }
   .burger-button:after {
     content: '';
     position: absolute;
@@ -662,7 +677,7 @@ header {
     margin-bottom: 45px;
     font-family: Euclid Circular B;
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.08em;
@@ -1152,6 +1167,10 @@ li {
     background-size: contain;
     margin-bottom: 103px;
 }
+.filter-wrap {
+  width: 1160px;
+  margin: 0 auto;
+}
 .tablet-wrapper {
     margin: -140px auto 0 auto;
     width: 1160px;
@@ -1166,6 +1185,7 @@ li {
 .all-inclusive-block {
     background: #F6F6F6;
     padding: 77px 116px;
+    margin: 0 24px;
     border-radius: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
