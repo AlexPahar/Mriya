@@ -39,8 +39,60 @@ ul, li {
     position: relative;
     z-index: 3;
   }
+  .line-block {
+    height: 48px;
+    border-left: 1px solid #D9C287;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-left: 35px;
+  }
+  .language-wrapper {
+    display: flex;
+  }
+  .ru-wrap {
+    padding: 28px 12px;
+  }
+  .ru-wrap a{
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+  }
+  .en-wrap {
+    padding: 28px 12px;
+  }
+  .en-wrap a{
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.24);
+    text-decoration: none;
+  }
+  .arrow-button {
+    width: 46px;
+    height: 46px;
+    display: block;
+    margin: 0 0 52px 13px;
+    border: 1px solid #D9C287;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: url(../images/arrow.png) 50% 55% no-repeat;
+  }
   .menu-top {
     padding: 28px;
+  }
+  .top-logo {
+    margin-left: 60px;
+    margin-right: 60px;
   }
   .menu-button {
     text-decoration: none;
