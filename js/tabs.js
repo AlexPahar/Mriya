@@ -1,18 +1,88 @@
-(function($) {
+(function ($) {
 	'use strict';
 
 	let Scrollbar = window.Scrollbar;
 
-	$(function() {
-		let menu_tab = $('.tabsmenu li'); 
+	$(function () {
+		let menu_tab = $('.tabsmenu li');
 		if (!menu_tab.length)
 			return
 
-		menu_tab.on('click', function() {
+		menu_tab.on('click', function () {
 			$(this).siblings().removeClass('active')
 			$(this).addClass('active')
 			SwitchTab($(this).index())
 		})
+
+		let js_slider = $('.js-slick-slider')
+
+		js_slider.each(function () {
+			//Инициализируем для каждого блока свой слайдер
+			$(this).slick({
+				infinite: true,
+				fade: true,
+				cssEase: 'linear',
+				speed: 500,
+				appendArrows: $('.js-slick-arrow-container') // Перенос стрелок к тайтлу
+			})
+		})
+
+		let burger_button = $('.burger-button'),
+			burger_block = $('.burger-block'),
+			burger_close = $('.burger-block__close');
+
+		burger_button.on('click', function () {
+			burger_block.fadeIn(800);
+			$('html, body').addClass('overflow');
+			var js_slider = $('.js-burger-slider');
+			js_slider.each(function () {
+				//Инициализируем для каждого блока свой слайдер
+				$(this).slick({
+					infinite: true,
+					fade: true,
+					cssEase: 'linear',
+					speed: 3000,
+					arrows: false,
+					dots: true,
+					autoplay: true
+				});
+			});
+		});
+		burger_close.on('click', function () {
+			burger_block.fadeOut(800);
+			$('html, body').removeClass('overflow');
+			var js_slider = $('.js-burger-slider');
+			js_slider.each(function () {
+				$(this).slick('unslick');
+			});
+		});
+
+		Scrollbar.init(document.querySelector('.burger-block__content_menu_left'));
+
+		var burger_menu_item = $('.burger-block__content_menu_left_item.submenu'),
+			right_menu_container = $('.burger-block__content_menu_right');
+		burger_menu_item.each(function () {
+			$(this).click(function (e) {
+				if (window.matchMedia("(min-width: 961px)").matches) {
+					e.preventDefault();
+					right_menu_container.children().remove();
+					Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'));
+					var submenu = $(this).parent().find('.menu-submenu').clone();
+					right_menu_container.append(submenu);
+					Scrollbar.init(document.querySelector('.burger-block__content_menu_right ul'));
+				} else {
+					e.preventDefault();
+
+					var _submenu = $(this).parent().find('.menu-submenu');
+
+					_submenu.slideToggle(500);
+				}
+			});
+		});
+		$('.burger-block__lang_item_active').on('click', function (e) {
+			e.preventDefault();
+			$(this).parent().toggleClass('opened');
+		});
 	})
 
 	let SwitchTab = (index) => {
@@ -20,176 +90,15 @@
 
 		if (!container_tab.eq(index).length)
 			return
-			
+
 		$('.tabsmenu-wrapper').find('.active-container').fadeOut(500, () => {
 			Scrollbar.destroy(document.querySelector('.active-container'))
 			container_tab.removeClass('active-container')
 
 			container_tab.eq(index).addClass('active-container')
-			container_tab.eq(index).css('display','flex').hide().fadeIn(500)
+			container_tab.eq(index).css('display', 'flex').hide().fadeIn(500)
 			Scrollbar.init(document.querySelector('.active-container'))
-			container_tab.eq(index).css('display','flex').stop()
+			container_tab.eq(index).css('display', 'flex').stop()
 		})
 	}
 })(jQuery);
-
-
-(function($) {
-    'use strict';
-
-    $(function() {
-        let js_slider = $('.js-slick-slider')
-
-        js_slider.each(function() {
-            //Инициализируем для каждого блока свой слайдер
-            $(this).slick({
-                infinite: true,
-                fade: true,
-                cssEase: 'linear',
-                speed: 500,
-                appendArrows: $('.js-slick-arrow-container') // Перенос стрелок к тайтлу
-            })
-        })
-    })
-})(jQuery);
-
-(function($) {
-    'use script'
-
-    $(function() {
-        let burger_button = $('.burger-button'),
-            burger_block = $('.burger-block'),
-            burger_close = $('.burger-block__close');
-        
-        burger_button.on('click', () => {
-            burger_block.fadeIn(800)
-            $('html, body').addClass('overflow')
-
-            let js_slider = $('.js-burger-slider')
-
-            js_slider.each(function() {
-                //Инициализируем для каждого блока свой слайдер
-                $(this).slick({
-                    infinite: true,
-                    fade: true,
-                    cssEase: 'linear',
-                    speed: 3000,
-                    arrows: false,
-                    dots: true,
-                    autoplay: true
-                })
-            })
-        })
-        burger_close.on('click', () => {
-            burger_block.fadeOut(800)
-            $('html, body').removeClass('overflow')
-
-            let js_slider = $('.js-burger-slider')
-
-            js_slider.each(function() {
-                $(this).slick('unslick');
-            })
-        })
-
-        let Scrollbar = window.Scrollbar; //Инициализация класса скрола
-
-        Scrollbar.init(document.querySelector('.burger-block__content_menu_left')) //работа скрола для меню
-
-        let burger_menu_item = $('.burger-block__content_menu_left_item.submenu'),
-            right_menu_container = $('.burger-block__content_menu_right')
-
-        burger_menu_item.each(function() {
-            $(this).click(function(e) {
-                if (window.matchMedia("(min-width: 961px)").matches) {
-                    e.preventDefault()
-
-                    right_menu_container.children().remove()
-                    Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'))
-    
-                    let submenu = $(this).parent().find('.menu-submenu').clone()
-                    right_menu_container.append(submenu)
-                    Scrollbar.init(document.querySelector('.burger-block__content_menu_right ul'))
-                } else {
-                    e.preventDefault()
-
-                    let submenu = $(this).parent().find('.menu-submenu');
-                    submenu.slideToggle(500);
-                }
-            })
-            // $(this).mouseleave(function() {
-            //     right_menu_container.children().remove()
-            //     Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'))
-            // })
-        })
-
-        $('.burger-block__lang_item_active').on('click', function(e) {
-            e.preventDefault()
-            $(this).parent().toggleClass('opened')
-        })
-    })
-})(jQuery);
-(function ($) {
-	'use script';
-  
-	$(function () {
-	  var burger_button = $('.burger-button'),
-		  burger_block = $('.burger-block'),
-		  burger_close = $('.burger-block__close');
-	  burger_button.on('click', function () {
-		burger_block.fadeIn(800);
-		$('html, body').addClass('overflow');
-		var js_slider = $('.js-burger-slider');
-		js_slider.each(function () {
-		  //Инициализируем для каждого блока свой слайдер
-		  $(this).slick({
-			infinite: true,
-			fade: true,
-			cssEase: 'linear',
-			speed: 3000,
-			arrows: false,
-			dots: true,
-			autoplay: true
-		  });
-		});
-	  });
-	  burger_close.on('click', function () {
-		burger_block.fadeOut(800);
-		$('html, body').removeClass('overflow');
-		var js_slider = $('.js-burger-slider');
-		js_slider.each(function () {
-		  $(this).slick('unslick');
-		});
-	  });
-	  var Scrollbar = window.Scrollbar; //Инициализация класса скрола
-  
-	  Scrollbar.init(document.querySelector('.burger-block__content_menu_left')); //работа скрола для меню
-  
-	  var burger_menu_item = $('.burger-block__content_menu_left_item.submenu'),
-		  right_menu_container = $('.burger-block__content_menu_right');
-	  burger_menu_item.each(function () {
-		$(this).click(function (e) {
-		  if (window.matchMedia("(min-width: 961px)").matches) {
-			e.preventDefault();
-			right_menu_container.children().remove();
-			Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'));
-			var submenu = $(this).parent().find('.menu-submenu').clone();
-			right_menu_container.append(submenu);
-			Scrollbar.init(document.querySelector('.burger-block__content_menu_right ul'));
-		  } else {
-			e.preventDefault();
-  
-			var _submenu = $(this).parent().find('.menu-submenu');
-  
-			_submenu.slideToggle(500);
-		  }
-		}); // $(this).mouseleave(function() {
-		//     right_menu_container.children().remove()
-		//     Scrollbar.destroy(document.querySelector('.burger-block__content_menu_right ul'))
-		// })
-	  });
-	  $('.burger-block__lang_item_active').on('click', function (e) {
-		e.preventDefault();
-		$(this).parent().toggleClass('opened');
-	  });
-	});
-  })(jQuery);
