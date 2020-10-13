@@ -1585,3 +1585,6 @@ li {
 .all-inclusive-block__slider .slick-track {
   display: flex;
 }
+.all-inclusive-block__slider .slick-list.draggable {
+  overflow: hidden;
+}
