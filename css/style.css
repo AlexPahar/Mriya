@@ -33,11 +33,13 @@ ul, li {
   }
   .top-menu {
     display: inline-flex;
+    margin-left: 30px;
   }
   .wrap-menu {
     display: flex;
     position: relative;
     z-index: 3;
+    margin-bottom: 80px;
   }
   .line-block {
     height: 48px;
@@ -77,6 +79,41 @@ ul, li {
     color: rgba(0, 0, 0, 0.24);
     text-decoration: none;
   }
+  .right-head {
+    display: flex;
+    align-items: center;
+    margin-left: 12%;
+  }
+  .inner a {
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+  }
+  .inner {
+    padding: 28px 20px;
+    background: url(../images/key.png) 0 50% no-repeat;
+  }
+  .phone {
+    padding: 28px 20px;
+  }
+  .phone a {
+    font-family: Euclid Circular B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
   .arrow-button {
     width: 46px;
     height: 46px;
@@ -91,8 +128,17 @@ ul, li {
     padding: 28px;
   }
   .top-logo {
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 8px 60px;
+    position: relative;
+  }
+  .top-logo::before{
+    content: '';
+    width: 73px;
+    height: 8px;
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    background: url(../images/stars.png) no-repeat;
   }
   .menu-button {
     text-decoration: none;
@@ -853,6 +899,29 @@ li {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    margin-top: 30px;
+}
+.wrap-about {
+  position: relative;
+  margin-bottom: 96px;
+}
+.wrap-about:before {
+    content:'';
+    position: absolute;
+    width: 365px;
+    height: 880px;
+    background: url(../images/1111.png) no-repeat;
+    left: 0;
+    bottom: -120px;
+}
+.wrap-about:after {
+  content: '';
+  position: absolute;
+  width: 524px;
+  height: 848px;
+  background: url(../images/222.png) no-repeat;
+  right: 0px;
+  top: 50px;
 }
 .tabsmenu {
     display: flex;
@@ -1041,6 +1110,7 @@ li {
        -moz-appearance: none;
             appearance: none;
     color: #333333;
+    width: 358px;
   }
   
   .filter-block-form__fields .typeselect::-webkit-input-placeholder {
@@ -1162,7 +1232,6 @@ li {
     width: 1160px;
     position: relative;
     margin: 0 auto;
-    margin-bottom: 96px;
 }
 .aboutUs-wrapper:before {
     position: absolute;
@@ -1240,6 +1309,8 @@ li {
     width: 1160px;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 3;
 }
 .logo-footer {
     display: flex;
@@ -1247,6 +1318,8 @@ li {
 }
 /*All inclusive*/
 .all-inclusive-block {
+    position: relative;
+    z-index: 2;
     background: #F6F6F6;
     padding: 77px 116px;
     margin: 0 24px;
@@ -1528,6 +1601,30 @@ li {
           -ms-flex-direction: column;
               flex-direction: column;
     }
+    .right-head {
+      display: none;
+    }
+    .top-menu__wrapper {
+      display: none;
+    }
+    .filter-block {
+      width: 280px;
+    }
+    .name {
+      font-family: SangBleu Kingdom;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 64px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+    }
+    .header-wrapper {
+      width: 280px;
+    }
+    .filter-wrap {
+      width: 280px;
+    }
     .all-inclusive-block__main_title {
       font: 700 24px/56px 'Euclid Circular B', 'Roboto', sans-serif;
       margin: 0 0 32px;
@@ -1578,6 +1675,31 @@ li {
     .active-container {
         flex-direction: column;
         margin-top: 0;
+        padding-left: 0;
+    }
+    .recovery-block2 {
+      background: none;
+      -webkit-box-shadow: none; 
+      box-shadow: none;
+      margin-left: -12px;
+   }
+    .wrap-about:before {
+      display: none;
+    }
+    .wrap-about:after {
+      display: none;
+    }
+    .language-wrapper {
+      display: none;
+    }
+    .headbg {
+      display: none;
+    }
+    .line-block {
+      margin-left: 166px;
+    }
+    .arrow-button {
+      margin: 0 0 52px 143px;
     }
     .tab {
         white-space: nowrap;
